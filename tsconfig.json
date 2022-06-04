@@ -1,4 +1,30 @@
 {
-  // https://v3.nuxtjs.org/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+    // https://v3.nuxtjs.org/concepts/typescript
+    "extends": "./.nuxt/tsconfig.json",
+    "compilerOptions": {
+        "target": "es2018",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "lib": ["esnext", "esnext.asynciterable", "es5", "es6", "es7", "dom"],
+        "jsx": "preserve",
+        "jsxFactory": "h",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "allowUnreachableCode": true, // 不报告执行不到的代码错误。
+        "allowUnusedLabels": false, // 不报告未使用的标签错误
+        "alwaysStrict": false, // 以严格模式解析并为每个源文件生成 "use strict"语句
+        "allowJs": true,
+        "sourceMap": true,
+        "strict": true,
+        "noEmit": true,
+        "baseUrl": ".", // 解析非相对模块名的基准目录
+        "experimentalDecorators": true, // 启用实验性的ES装饰器
+        "noImplicitAny": false,
+        "paths": {
+            "~/*": ["./*"],
+            "@/*": ["./*"]
+        },
+        "types": ["@types/node", "@nuxt/types", "@nuxtjs/axios"]
+    },
+    "exclude": ["node_modules", ".nuxt", "dist"]
 }

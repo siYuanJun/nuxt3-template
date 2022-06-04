@@ -1,0 +1,5 @@
+# 忽略打包的文件
+.nuxt
+dist
+public
+
