@@ -36,5 +36,8 @@ module.exports = {
             },
         },
     },
-    rules: {},
+    rules: {
+        // 关闭组件命名规则
+        'vue/multi-word-component-names': 'off',
+    },
 }
