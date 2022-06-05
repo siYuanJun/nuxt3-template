@@ -23,7 +23,7 @@ module.exports = {
             tsx: true,
         },
     },
-    extends: ['plugin:vue/vue3-essential', 'plugin:vue/vue3-recommended', 'plugin:prettier/recommended'],
+    extends: ['@nuxtjs/eslint-config-typescript', 'plugin:nuxt/recommended', 'plugin:prettier/recommended'],
     plugins: ['vue', '@typescript-eslint'],
     settings: {
         'import/extensions': ['.vue', '.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -39,5 +39,7 @@ module.exports = {
     rules: {
         // 关闭组件命名规则
         'vue/multi-word-component-names': 'off',
+        'prettier/prettier': 'off',
+        'vue/no-multiple-template-root': 'off',
     },
 }
