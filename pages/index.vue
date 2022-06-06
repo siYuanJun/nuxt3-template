@@ -5,7 +5,7 @@
             <a>hello world</a>
             {{ $t('pages.index.title') }}
         </div>
-        {{res}}
+        <!-- {{res}} -->
     </div>
 </template>
 
@@ -14,10 +14,10 @@ export default {
     async setup() {
         console.log(requestCommon())
 
-        const res = await requestCommon().home({size: 100})
-        return {
-            res
-        }
+        // const res = await requestCommon().home({size: 100})
+        // return {
+        //     res
+        // }
     },
 }
 </script>

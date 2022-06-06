@@ -13,6 +13,8 @@ declare module '@nuxt/schema' {
         experimental?: Object
         vueuse?: Object
         runtimeConfig?: Object
+        styleResources?: Object
+        loading?: Object
     }
 }
 
@@ -26,14 +28,26 @@ export default defineNuxtConfig({
             {
                 hid: 'description',
                 name: 'description',
-                content: 'Nuxt3 Starter',
+                content: '****',
             },
         ],
-        link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+        link: [
+            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'stylesheet', href: '/static/plugins/swiper/swiper.min.css' },
+        ],
+        script: [
+            { src: '/static/js/jquery.min.js' },
+            { src: '/static/plugins/swiper/swiper.min.js' },
+            { src: '/static/js/common.js' }
+        ],
     },
 
     // css
-    css: ['@/assets/css/styles.css'],
+    css: [
+        '~/assets/css/tailwind.css',
+        '~/assets/scss/normailze.scss',
+        // 'fluid-player/src/css/fluidplayer.css',
+    ],
 
     // plugins
     plugins: [
@@ -48,41 +62,13 @@ export default defineNuxtConfig({
         },
     },
 
-    // axios: {
-    //     proxy: true, // 代理时本地测试域名无法访问
-    //     prefix: '/', // proxy=true 生效
-    //     baseURL: env.API_BASE_URL, // proxy=false 有效
-    // },
-
-    // test proxy
-    // proxy: {
-    //     '/api/': {
-    //         target: API_BASE_URL,
-    //         // secure: false,  // 如果是 https 接口，需要配置这个参数
-    //         changeOrigin: true, // 如关闭可能接口出现异常
-    //         pathRewrite: {
-    //             '^/api': '/api',
-    //             changeOrigin: true,
-    //         },
-    //     },
-    //     '/uploads/': {
-    //         target: API_BASE_URL,
-    //         // secure: false,  // 如果是 https 接口，需要配置这个参数
-    //         changeOrigin: true, // 如关闭可能接口出现异常
-    //         pathRewrite: {
-    //             '^/uploads': '/uploads',
-    //             changeOrigin: true,
-    //         },
-    //     },
-    // },
-
     // build modules
     buildModules: [
         '@nuxtjs/eslint-module',
         '@pinia/nuxt',
         '@intlify/nuxt3',
         '@vueuse/nuxt',
-        // '@nuxtjs/axios'
+        // '@nuxtjs/style-resources',
     ],
 
     // experimental features
@@ -92,9 +78,16 @@ export default defineNuxtConfig({
     components: true,
 
     // vite plugins
-    // vite: {
-    //     plugins: [],
-    // },
+    vite: {
+        plugins: [],
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: '@import "@/assets/scss/_variable.scss";@import "@/assets/scss/_mixins.scss";',
+                },
+            },
+        },
+    },
 
     // localization - i18n config
     intlify: {
@@ -102,7 +95,9 @@ export default defineNuxtConfig({
         vueI18n: {
             locale: 'zh',
             fallbackLocale: 'zh',
-            availableLocales: ['zh', 'en', 'id', 'ja'],
+            availableLocales: ['zh', 'en'],
+            silentFallbackWarn: false,
+            formatFallbackMessages: false,
         },
     },
 
@@ -116,6 +111,19 @@ export default defineNuxtConfig({
     },
 
     modules: [
-        // ['@nuxtjs/axios', { proxyHeaders: false }]
     ],
+
+    // styleResources: {
+    //     scss: [
+    //         '~/assets/scss/_variable.scss',
+    //         '~/assets/scss/_mixins.scss'
+    //     ],
+    // },
+
+    loading: {
+        color: 'rgba(37, 28, 229, 0.66)',
+        height: '2px',
+        continuous: true,
+        duration: 3000,
+    },
 })

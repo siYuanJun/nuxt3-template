@@ -19,16 +19,16 @@ export const availableLocales: ILocales = {
         iso: 'en-US',
         flag: '🇺🇸',
     },
-    id: {
-        name: 'Bahasa',
-        iso: 'id-HID',
-        flag: '🇮🇩',
-    },
-    ja: {
-        name: '日本語',
-        iso: 'ja-JP',
-        flag: '🇯🇵',
-    },
+    // id: {
+    //     name: 'Bahasa',
+    //     iso: 'id-HID',
+    //     flag: '🇮🇩',
+    // },
+    // ja: {
+    //     name: '日本語',
+    //     iso: 'ja-JP',
+    //     flag: '🇯🇵',
+    // },
 }
 
 export function LanguageManager() {
@@ -44,8 +44,10 @@ export function LanguageManager() {
             return 'en'
         }
     }
-    const getUserLocale = (): string =>
-        localeUserSetting.value || getSystemLocale()
+
+    const getUserLocale = (): string => {
+       return localeUserSetting.value || getSystemLocale()
+    }
 
     // state
     const localeSetting = useState<string>('locale.setting', () =>
@@ -63,6 +65,7 @@ export function LanguageManager() {
         localeSetting.value = getUserLocale()
     }
     locale.value = localeSetting.value
+    console.log('当前语言:', localeSetting.value)
 
     // lifecycle
     onBeforeMount(() => init())
