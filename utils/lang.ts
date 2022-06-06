@@ -19,16 +19,11 @@ export const availableLocales: ILocales = {
         iso: 'en-US',
         flag: '🇺🇸',
     },
-    // id: {
-    //     name: 'Bahasa',
-    //     iso: 'id-HID',
-    //     flag: '🇮🇩',
-    // },
-    // ja: {
-    //     name: '日本語',
-    //     iso: 'ja-JP',
-    //     flag: '🇯🇵',
-    // },
+    ja: {
+        name: '日本語',
+        iso: 'ja-JP',
+        flag: '🇯🇵',
+    },
 }
 
 export function LanguageManager() {
@@ -45,9 +40,8 @@ export function LanguageManager() {
         }
     }
 
-    const getUserLocale = (): string => {
-       return localeUserSetting.value || getSystemLocale()
-    }
+    const getUserLocale = (): string =>
+        localeUserSetting.value || getSystemLocale()
 
     // state
     const localeSetting = useState<string>('locale.setting', () =>
