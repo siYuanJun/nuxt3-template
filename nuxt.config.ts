@@ -68,7 +68,6 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
         '@intlify/nuxt3',
         '@vueuse/nuxt',
-        // '@nuxtjs/style-resources',
     ],
 
     // experimental features
