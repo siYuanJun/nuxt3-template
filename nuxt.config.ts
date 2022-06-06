@@ -112,13 +112,7 @@ export default defineNuxtConfig({
     },
 
     runtimeConfig: {
-        baseURL: env.API_BASE_URL,
-        // The private keys which are only available within server-side
-        apiSecret: '123',
-        // Keys within public, will be also exposed to the client-side
-        public: {
-            apiBase: '/api',
-        },
+        ...env
     },
 
     modules: [

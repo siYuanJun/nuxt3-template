@@ -2,7 +2,7 @@ const envData = {
     development: {
         NODE_ENV: 'development',
         // 测试服务器地址
-        API_BASE_URL: 'http://192.168.1.165:8080',
+        API_BASE_URL: 'http://127.0.0.1:8000',
         API_BASE_SECRET: '5N1nibXzwFjhOHUv',
         DEBUG: true,
     },

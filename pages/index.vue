@@ -5,18 +5,19 @@
             <a>hello world</a>
             {{ $t('pages.index.title') }}
         </div>
+        {{res}}
     </div>
 </template>
 
 <script lang="ts">
 export default {
     async setup() {
+        console.log(requestCommon())
 
-        // const { $request } = useNuxtApp()
-        // let res = await $request.home()
-        // console.log(res)
-        // const res =  await $fetch('/api/v1/pages')
-        // console.log(res)
+        const res = await requestCommon().home({size: 100})
+        return {
+            res
+        }
     },
 }
 </script>
