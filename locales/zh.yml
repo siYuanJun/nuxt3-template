@@ -1,3 +1,1 @@
-pages:
-    index:
-        title: "nuxt3-首页"
+webTitle: "nuxt3-首页"

@@ -3,7 +3,7 @@
         <div class="text-blue-500 text-lg">pages-index</div>
         <div class="main-body">
             <a>hello world</a>
-            {{ $t('pages.index.title') }}
+            <!-- {{ $t('pages.index.title') }} -->
         </div>
         <!-- {{res}} -->
     </div>
@@ -12,6 +12,10 @@
 <script lang="ts">
 export default {
     async setup() {
+         useMeta({
+            title: useWebTitle(),
+        })
+
         console.log(requestCommon())
 
         // const res = await requestCommon().home({size: 100})

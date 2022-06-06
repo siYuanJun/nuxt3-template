@@ -10,6 +10,8 @@
 import { AppSetup } from './utils/app'
 AppSetup()
 const locale = useState<string>('locale.setting')
+console.log('当前语言:', locale.value)
+
 </script>
 
 <style lang="scss" scoped>

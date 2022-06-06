@@ -12,7 +12,9 @@
         "prepare": "husky install",
         "preview": "nuxi preview"
     },
-    "dependencies": {},
+    "dependencies": {
+        "element-plus": "^2.2.4"
+    },
     "devDependencies": {
         "@commitlint/cli": "^16.1.0",
         "@commitlint/config-conventional": "^16.0.0",

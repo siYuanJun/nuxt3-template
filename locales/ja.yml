@@ -1,3 +1,2 @@
-pages:
-    index:
-        title: "nuxt3-トップページ"
+webTitle: "nuxt3-トップページ"
+

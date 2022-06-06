@@ -4,20 +4,18 @@ export interface IApp {
   name: string
   author: {
     name: string
-    link: string
   }
 }
 
 export function AppSetup() {
   // declare app information
   const app: IApp = {
-    name: 'Nuxt 3 Awesome Starter',
+    name: 'Nuxt 3 Starter',
     author: {
-      name: 'viandwi24',
-      link: 'https://github.com/viandwi24',
+      name: 'siYuan',
     },
   }
-  useState('app', () => app)
+  useState('appConfig', () => app)
 
   // use language manager
   const languageManager = LanguageManager()

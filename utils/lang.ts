@@ -59,7 +59,6 @@ export function LanguageManager() {
         localeSetting.value = getUserLocale()
     }
     locale.value = localeSetting.value
-    console.log('当前语言:', localeSetting.value)
 
     // lifecycle
     onBeforeMount(() => init())
