@@ -20,9 +20,10 @@ declare module '@nuxt/schema' {
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
+    // buildDir: 'nuxt-build',
     meta: {
-        title: 'Nuxt3 Starter',
-        titleTemplate: '%s - Nuxt3 Starter',
+        // title: 'Nuxt3 Starter',
+        // titleTemplate: '%s - Nuxt3 Starter',
         meta: [
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             {
@@ -46,6 +47,7 @@ export default defineNuxtConfig({
     css: [
         '~/assets/css/tailwind.css',
         '~/assets/scss/normailze.scss',
+        'element-plus/dist/index.css'
         // 'fluid-player/src/css/fluidplayer.css',
     ],
 
@@ -82,8 +84,23 @@ export default defineNuxtConfig({
         css: {
             preprocessorOptions: {
                 scss: {
+                    charset: false,
                     additionalData: '@import "@/assets/scss/_variable.scss";@import "@/assets/scss/_mixins.scss";',
                 },
+            },
+            postcss: {
+                plugins: [
+                    {
+                        postcssPlugin: 'internal:charset-removal',
+                        AtRule: {
+                            charset: (atRule) => {
+                                if (atRule.name === 'charset') {
+                                    atRule.remove();
+                                }
+                            }
+                        }
+                    }
+                ],
             },
         },
     },
@@ -94,7 +111,7 @@ export default defineNuxtConfig({
         vueI18n: {
             locale: 'en',
             fallbackLocale: 'en',
-            availableLocales: ['zh', 'en', 'ja'],
+            availableLocales: ['zh', 'en'],
             silentFallbackWarn: false,
             formatFallbackMessages: false,
         },
@@ -111,13 +128,6 @@ export default defineNuxtConfig({
 
     modules: [
     ],
-
-    // styleResources: {
-    //     scss: [
-    //         '~/assets/scss/_variable.scss',
-    //         '~/assets/scss/_mixins.scss'
-    //     ],
-    // },
 
     loading: {
         color: 'rgba(37, 28, 229, 0.66)',
