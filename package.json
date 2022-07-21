@@ -13,7 +13,8 @@
         "preview": "nuxi preview"
     },
     "dependencies": {
-        "element-plus": "^2.2.4"
+        "element-plus": "^2.2.4",
+        "vue-devui": "^1.0.0-rc.11"
     },
     "devDependencies": {
         "@commitlint/cli": "^16.1.0",

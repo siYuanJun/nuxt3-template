@@ -5,6 +5,7 @@
             <a>hello world</a>
             <!-- {{ $t('pages.index.title') }} -->
         </div>
+        <d-button>确定</d-button>
         <!-- {{res}} -->
     </div>
 </template>
@@ -12,7 +13,7 @@
 <script lang="ts">
 export default {
     async setup() {
-         useMeta({
+        useMeta({
             title: useWebTitle(),
         })
 

@@ -47,7 +47,9 @@ export default defineNuxtConfig({
     css: [
         '~/assets/css/tailwind.css',
         '~/assets/scss/normailze.scss',
-        'element-plus/dist/index.css'
+        'element-plus/dist/index.css',
+        { ssr: false, src: 'vue-devui/style.css' },
+
         // 'fluid-player/src/css/fluidplayer.css',
     ],
 
