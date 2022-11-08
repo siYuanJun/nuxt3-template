@@ -113,7 +113,6 @@ $font-light-color: #333;
         border-bottom: 1px solid;
         padding-bottom: 8px;
         margin-bottom: 4rem;
-        @include color-transition();
         &:hover {
             color: $font-light-color;
         }

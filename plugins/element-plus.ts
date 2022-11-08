@@ -1,4 +1,5 @@
 import ElementPlus from 'element-plus/dist/index.full'
+import { defineNuxtPlugin } from 'nuxt3'
 // import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 export default defineNuxtPlugin(nuxtApp => {

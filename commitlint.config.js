@@ -1,11 +1,27 @@
 module.exports = {
-    extends: ['@commitlint/config-conventional'],
-    rules: {
-        'type-enum': [2, 'always', ['build', 'ci', 'chore', 'docs', 'feat', 'fix', 'perf', 'refactor', 'revert', 'style', 'test']],
-        // 'subject-full-stop': [0, 'never'],
-        // 'subject-case': [0, 'never']
-    },
-}
+  extends: ["@commitlint/config-conventional"],
+  rules: {
+    "type-enum": [
+      2,
+      "always",
+      [
+        "build",
+        "ci",
+        "chore",
+        "docs",
+        "feat",
+        "fix",
+        "perf",
+        "refactor",
+        "revert",
+        "style",
+        "test",
+      ],
+    ],
+    // 'subject-full-stop': [0, 'never'],
+    // 'subject-case': [0, 'never']
+  },
+};
 
 //   build：主要目的是修改项目构建系统(例如 glup，webpack，rollup 的配置等)的提交
 //   ci：主要目的是修改项目继续集成流程(例如 Travis，Jenkins，GitLab CI，Circle等)的提交
